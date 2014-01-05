@@ -8,6 +8,13 @@ namespace FizzWare.NBuilder.Tests.Unit.Dates
     [TestFixture]
     public class DatesTests
     {
+		[Test]
+		public void DateTime_MinValue_uses_Original_Static_Value()
+		{
+			var correctDate = DateTime.MinValue;
+			Builder<DateTime>.CreateNew().Build();
+			Assert.AreEqual(DateTime.MinValue,correctDate);
+		}
         [Test]
         public void TheYear_x_uses_that_year_to_make_dates()
         {
